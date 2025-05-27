@@ -1,8 +1,8 @@
 'use client'
-
 import { LinksRefferals } from '@components/LinkRefferals';
 import "@styles/globals.scss"
 import "@styles/ft-hd/footer.scss"
+import Image from 'next/image';
 
 const { phonemail, socialLinks } = LinksRefferals();
 
@@ -17,7 +17,13 @@ const Footer = () => {
               href={link.href}
               className="footer-contact-link flex translate-transition"
             >
-              <img src={link.src} alt={link.alt} className="small-img invert" />
+              <Image
+                src={link.src}
+                alt={link.alt}
+                width={24}
+                height={24}
+                className="small-img invert"
+              />
               <p className='text-right'>{link.text}</p>
             </a>
           ))}
@@ -30,7 +36,13 @@ const Footer = () => {
                 key={link.href}
                 className="footer-social-icon translate-transition"
               >
-                <img src={link.src} alt={link.alt} className='small-img invert' />
+                 <Image
+                  src={link.src}
+                  alt={link.alt}
+                  width={24}
+                  height={24}
+                  className="small-img invert"
+                />
               </a>
             ))}
           </div>

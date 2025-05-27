@@ -1,7 +1,7 @@
 'use client';
 import "@styles/globals.scss";
 import "@styles/contact-page/contact-page.scss";
-
+import Image from "next/image";
 export default function ContactPage() {
   return (
     <main>
@@ -28,9 +28,8 @@ export default function ContactPage() {
             </section>
           </div>
           <div className="cp-image-side">
-            <img src="/contactbg.jpg" alt="Kontakt z firmą" />
+            <Image src="/contactbg.jpg" alt="Kontakt z firmą" width={800} height={600} />
           </div>
-
         </div>
 
       </section>
