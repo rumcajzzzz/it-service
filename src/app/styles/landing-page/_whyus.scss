@@ -1,0 +1,71 @@
+@use 'sass:math';
+@function rem($px) {
+	@return math.div($px, 16) * 1rem;
+}
+.why-us-section {
+	padding: 7rem 2rem;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+  }
+  
+  .why-us-title {
+	font-size: 2rem;
+	margin-bottom: rem(40);
+	color: #fff;
+  }
+  
+  .why-us-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: rem(40);
+	max-width: rem(1000);
+	margin: 0 auto;
+  
+	@media (max-width: 768px) {
+	  grid-template-columns: 1fr;
+	}
+  }
+  
+  .why-us-text {
+	text-align: left;
+  
+	h3 {
+	  font-size: 1.3rem;
+	  margin-bottom: rem(10);
+	  color: #f1f1f1;
+	}
+  
+	p {
+	  font-size: 1rem;
+	  font-weight: 300;
+	  margin-bottom: rem(20);
+	  color: #ccc;
+	  line-height: 1.6;
+	}
+  }
+  
+  .why-us-images {
+	display: flex;
+	flex-direction: column;
+	gap: rem(20);
+  }
+  
+  .image-wrapper {
+	border-radius: rem(12);
+	overflow: hidden;
+	box-shadow: 0 rem(8) rem(20) rgba(255, 255, 255, 0.05);
+  
+	img {
+	  width: 100%;
+	  max-height: rem(200);
+	  display: block;
+	  object-fit: cover;
+	  transition: transform 0.4s ease;
+  
+	  &:hover {
+		transform: scale(1.03);
+	  }
+	}
+  }
+  

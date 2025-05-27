@@ -1,0 +1,52 @@
+@use 'sass:math';
+@function rem($px) {
+	@return math.div($px, 16) * 1rem;
+}
+.hero-section {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	place-items: center;
+	object-fit: cover;
+}
+
+	.hero-section::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-image: url("/herosection.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		opacity: 0.2; 
+		filter: blur(0.5rem);
+		z-index: -999;
+	}
+	.hero-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hero-text h1 {
+		font-size: clamp(2rem, 5vw, 3rem);
+		text-align: center;
+		margin-bottom: 0.5rem;
+	}
+
+	.hero-text p {
+		font-size: clamp(0.7rem, 2vw, 1rem);
+		margin-bottom: 3rem;
+		font-weight: 400;
+	}
+
+	.hero-text button {
+		background-color: var(--primary-color);
+		padding: 1.2rem 5rem;
+		cursor: pointer;
+		border-radius: 0.5rem;
+	}

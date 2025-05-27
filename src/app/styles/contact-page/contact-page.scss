@@ -1,0 +1,128 @@
+@use 'sass:math';
+
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+.cp-contact-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url("/contactbg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .cp-wrapper {
+    display: flex;
+	flex-direction: row;
+	max-width: rem(800);
+	height: rem(400);
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(24);
+	@media (max-width: 640px) {
+		display: block;
+	}
+  }
+  .cp-title {
+	position: relative;
+	font-size: rem(24);
+	color: var(--primary-color);
+	display: inline-block;
+	&::after {
+		content: "";
+		position: absolute;
+		top: rem(-5);
+		left: 0;
+		width: rem(128);
+		height: rem(4);
+		background-color: var(--primary-color);
+		animation: swing 10s ease-in-out infinite;
+	}
+  }
+  .cp-text-side {
+    flex: 50%;
+
+    p {
+      margin-top: rem(16);
+      line-height: 1.6;
+    }
+  }
+
+  .cp-image-side {
+    flex: 50%;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	@media (max-width: 640px) {
+		display: none;
+	}
+    img {
+      height: 100%;
+      border-radius: rem(12);
+      object-fit: cover;
+    }
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.cp-contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: rem(16);
+	max-width: rem(600);
+	margin: 0 auto;
+  
+	input,
+	textarea {
+	  min-height: rem(48);
+	  max-width: rem(96);
+	  padding: rem(12);
+	  border-radius: rem(8);
+	  border: 1px solid #ccc;
+	  font-size: rem(14);
+	}
+  
+	button {
+	  background: var(--primary-color);
+	  color: white;
+	  padding: rem(12);
+	  border: none;
+	  border-radius: rem(8);
+	  cursor: pointer;
+	}
+  
+	// MOBILE RESPONSIVE
+
+	  max-width: 100%;
+	  margin-top: rem(12);
+	  margin-bottom: rem(12);
+  
+	  input,
+	  textarea {
+		max-width: 100%;
+		width: 100%;
+	  }
+	}
+  
+@keyframes swing {
+	from {
+		width: 10%;
+	}
+	50% {
+		width: 100%;
+	}
+	to {
+		width: 10%;
+	}
+}
