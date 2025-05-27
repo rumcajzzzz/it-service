@@ -1,6 +1,7 @@
 'use client';
 import "@styles/globals.scss"
 import '@styles/about-page/about-page.scss';
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -18,10 +19,24 @@ export default function About() {
             </p>
           </div>
           <div className="image-side fade-in-on-scroll">
-            <img src="/aboutbg.jpg" alt="Naprawa komputera" />
+            <Image
+                src="/aboutbg.jpg"
+                alt="Naprawa komputera"
+                width={600}
+                height={400}
+                className=""
+              />
           </div>
         </div>
-        <a href="#stats-block" className="text-white fade-in-on-scroll"><img src="arrow.svg" alt="arrowdown icon" className="small-img invert my-10"/></a>
+        <a href="#stats-block" className="text-white fade-in-on-scroll">
+          <Image
+            src="/arrow.svg"
+            alt="arrowdown icon"
+            width={24}
+            height={24}
+            className="small-img invert my-10"
+          />
+        </a>
       </section>
 
       <section className="stats-wrapper" id="stats-block">
@@ -50,33 +65,39 @@ export default function About() {
         </h3>
         <div className="testimonials fade-in-on-scroll">
           <article className="testimonial">
-            <img
-              src="/abouttest.png"
-              alt="Jan"
-              className="avatar"
-            />
+              <Image
+                src="/abouttest.png"
+                alt="Jan"
+                width={80}
+                height={80}
+                className="avatar"
+              />
             <h4>Jan</h4>
             <p className="quote">
               TechCare Solutions uratowało moją firmę, ich szybkie reakcje i wiedza są godne polecania.
             </p>
           </article>
           <article className="testimonial">
-            <img
-              src="/abouttest.png"
-              alt="Michał"
-              className="avatar"
-            />
+              <Image
+                src="/abouttest.png"
+                alt="Michal"
+                width={80}
+                height={80}
+                className="avatar"
+              />
             <h4>Michał</h4>
             <p className="quote">
               Miałem problem z laptopem, który wydawał się niemożliwy do naprawienia, ale zespół poradził sobie.
             </p>
           </article>
           <article className="testimonial">
-            <img
-              src="/abouttest.png"
-              alt="David"
-              className="avatar"
-            />
+            <Image
+                src="/abouttest.png"
+                alt="Dawid"
+                width={80}
+                height={80}
+                className="avatar"
+              />
             <h4>David</h4>
             <p className="quote">
               Korzystałem z TechCare Solutions do potrzeb osobistych i biznesowych. Zaufam im całkowicie.

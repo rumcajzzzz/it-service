@@ -1,6 +1,7 @@
 import "@styles/globals.scss"
 import '@styles/landing-page/landing-page.scss';
 import ReviewCarousel from "@components/ReviewSlider";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -50,7 +51,12 @@ export default function Home() {
               </p>
             </div>
             <div className="why-us-image zoom-hover">
-              <img src="/work1.jpg" alt="Technik naprawia komputer" />
+             <Image
+                src="/work1.jpg"
+                alt="Technik naprawia komputer"
+                width={600}
+                height={400}
+              />
             </div>
           </div>
 
@@ -62,7 +68,12 @@ export default function Home() {
               </p>
             </div>
             <div className="why-us-image zoom-hover">
-              <img src="/work2.jpg" alt="Serwis komputerowy w trakcie pracy" />
+              <Image
+                src="/work2.jpg"
+                alt="Serwis komputerowy w trakcie pracy"
+                width={600}
+                height={400}
+              />
             </div>
           </div>
         </div>
